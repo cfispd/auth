@@ -45,9 +45,6 @@ app.get("/", (request, response, next) => {
 
 
 app.post("/register", (request, response) => {
-  console.log(request.body)
-  console.log(request.url)
-  console.log(request)
   // hash the password
   bcrypt
     .hash(request.body.password, 10)
@@ -73,6 +70,7 @@ app.post("/register", (request, response) => {
           response.status(500).send({
             message: "Error creating user",
             error,
+            resason:"IDK"
           });
         });
     })
